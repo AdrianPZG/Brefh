@@ -9,51 +9,53 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+
+
+
+
+</head>
 <body>
 
     <!-- --HEADER-- -->
     <header>
         <nav class="navbar">
-
             <div class="brand-title">
                 <img src="/images/BREHF BLANCO B.png" alt="Logo" class="logo">
             </div>
-
-            <a href="javascript:void(0);" class="toggle-button">
+            <a href="javascript:void(0);" class="toggle-button" aria-label="Toggle Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </a>
-
             <div class="navbar-links">
-                <button class="close-button">&times;</button>
+                <button class="close-button" aria-label="Close Menu">&times;</button>
                 <ul class="nav_list">
                     <li class="nav_item"><a href="#">Inicio</a></li>
                     <li class="nav_item"><a href="#">Nosotros</a></li>
-                    <li class="nav_item"><a href="#">Servicios</a></li>
+                    <li class="nav_item"><a href="#services">Servicios</a></li>
                     <li class="nav_item"><a href="#">Contacto</a></li>
                 </ul>
             </div>
-
         </nav>
     </header>
-
 
     <!-- --MAIN-- -->
     <main>
         <!-- --SECTION ONE-- -->
-        <section class="section-one">
+        <section class="section-one animate-on-scroll">
             <div class="content">
                 <h1>Bienvenido, conéctate a<span><br>Brefh Asesores.</span></h1>
-                <p>En BREFH somos expertos en las áreas claves de la
-                    administración de tu empresa, deja eso en nuestras
-                    manos y concentrate en hacer crecer tu negocio.</p>
+                <p>En Brefh Asesores entendemos los desafíos que enfrentan 
+                    las empresas y emprendimientos en México. Es por eso 
+                    que ofrecemos soluciones integrales diseñadas para 
+                    impulsar el crecimiento y la eficiencia de su negocio. 
+                    Estamos aquí para ser su socio estratégico en el camino hacia el éxito. 
+                </p>
                 <div class="buttons">
-                    <button class="btn primary-btn">Conoce Más</button>
-                    <button class="btn secondary-btn">Contáctanos</button>
+                    <button class="btn primary-btn">¡CONOCE MÁS!</button>
+                    <button class="btn secondary-btn">¡CONTÁCTANOS!</button>
                 </div>
             </div>
             <div class="image">
@@ -61,252 +63,250 @@
             </div>
         </section>
 
-
         <!-- --SECTION TWO-- -->
-        <section class="about-us">
-            <div class="about-content">
-                <h2>Sobre Nosotros</h2>
-                <p>En BREFH, nuestra misión es proporcionar soluciones de gestión empresarial de alta calidad. Nuestro equipo de expertos está aquí para ayudarte a alcanzar tus objetivos estratégicos y operativos.</p>
-                <p>Desde nuestra fundación, hemos trabajado arduamente para convertirnos en líderes en asesoramiento empresarial, ofreciendo un enfoque en resultados y satisfacción del cliente.</p>
-                
-                <!-- <div class="about-image">
-                    <img src="/images/BREFH_mini.png" alt="Sobre Nosotros" class="about-image-img">
-                </div> -->
-                
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>10+</h3>
-                        <p>Años de Experiencia</p>
-                    </div>
-                    <div class="stat">
-                        <h3>150+</h3>
-                        <p>Clientes Satisfechos</p>
-                    </div>
-                    <div class="stat">
-                        <h3>50+</h3>
-                        <p>Proyectos Exitosos</p>
-                    </div>
-                </div>
-        
-                <div class="invitation">
-                    <h2>¿Quieres Saber Más?</h2>
-                    <p>Descubre cómo nuestras soluciones personalizadas pueden transformar tu negocio y ayudarte a alcanzar tus objetivos. No dudes en ponerte en contacto con nosotros para una consulta gratuita.</p>
-                    <a href="#contact" class="btn contact-btn">Contáctanos</a>
-                </div>
+        <section class="section-two">
+        <h2>Servicios</h2>
+        <div class="underline"></div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="ri-group-line"></i>
+                <h3>Reclutamiento y Selección</h3>
+                <p>Encuentra y contrata a los mejores talentos para tu empresa, optimizando la calidad del trabajo y fortaleciendo tu equipo.</p>
+                <a href="#" class="more-info">Más Información</a>
             </div>
+            <div class="service-card">
+                <i class="ri-bar-chart-line"></i>
+                <h3>Desarrollo Organizacional</h3>
+                <p>Fortalece la estructura y cultura de tu empresa con estrategias personalizadas que aumenten la eficiencia y productividad.</p>
+                <a href="#" class="more-info">Más Información</a>
+            </div>
+            <div class="service-card">
+                <i class="ri-book-2-line"></i>
+                <h3>Administración y Contabilidad</h3>
+                <p>Gestiona tus registros contables, informes financieros y nómina con precisión y cumplimiento fiscal.</p>
+                <a href="#" class="more-info">Más Información</a>
+            </div>
+            <div class="service-card">
+                <i class="ri-user-4-line"></i>
+                <h3>Job Coaching</h3>
+                <p>Desarrolla habilidades profesionales y mejora el desempeño de tus empleados con nuestro coaching personalizado.</p>
+                <a href="#" class="more-info">Más Información</a>
+            </div>
+        </div>
         </section>
 
 
-        --SECTION THREE--
-        <!-- <section class="why-choose-us">
-            <div class="container">
-                <h2>¿Por qué Elegirnos?</h2>
-                <p class="intro">Descubre las razones por las que somos la mejor opción para tus necesidades. Nuestra experiencia, atención al detalle y compromiso con la excelencia nos distinguen.</p>
-                <div class="features">
-                    <div class="feature-item">
-                        <div class="icon-container">
-                            <i class="ri-customer-service-2-line"></i> <!-- Remix Icon example -->
-                        <!-- </div>
-                        <h3>Atención Personalizada</h3>
-                        <p>Recibe asesoría adaptada a las necesidades específicas de tu negocio, con un enfoque personalizado y atento.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon-container">
-                            <i class="ri-check-line"></i> <!-- Remix Icon example -->
-                        <!-- </div>
-                        <h3>Soluciones Efectivas</h3>
-                        <p>Nuestros expertos te ofrecen soluciones innovadoras y efectivas para cada uno de los desafíos que enfrentas.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon-container">
-                            <i class="ri-time-line"></i> <!-- Remix Icon example -->
-                        <!-- </div>
-                        <h3>Eficiencia y Puntualidad</h3>
-                        <p>Valoramos tu tiempo y garantizamos resultados puntuales con la más alta eficiencia en cada proyecto.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon-container">
-                            <i class="ri-thumbs-up-line"></i> <!-- Remix Icon example -->
-                        <!-- </div>
-                        <h3>Resultados Garantizados</h3>
-                        <p>Trabajamos con un compromiso firme para asegurar que obtengas resultados tangibles y satisfactorios.</p>
-                    </div>
-                </div> -->
-            <!-- </div> -->
-        <!-- </section> --> --> --> --> -->
 
 
-
+        <!-- --SECTION THREE -- -->
+        <section class="about-us">
+            <div class="background-image">
+                <div class="content">
+                    <h2>Quiénes Somos</h2>
+                    <p>Tu párrafo descriptivo sobre la empresa o el equipo aquí. Asegúrate de proporcionar información relevante y de mantener el texto alineado a la izquierda.</p>
+                </div>
+            </div>
+        </section>
+        
+        
 
         <!-- --SECTION FOUR-- -->
-        <section class="services">
-            
-            <div class="parallax"></div> <!-- Fondo de parallax -->
+        <section class="section-four">
             <div class="container">
-                <h2 class="animate-header">Servicios que Ofrecemos</h2>
-                <p class="intro">Explora nuestros servicios diseñados para ayudarte a alcanzar el éxito. Cada uno está pensado para resolver tus necesidades de manera efectiva y profesional.</p>
-        
-                <!-- Slider de Servicios Destacados -->
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slider-item">
-                            <h3>Consultoría Financiera</h3>
-                            <p>Obtén asesoramiento experto para maximizar tus recursos y tomar decisiones informadas para tu negocio.</p>
-                        </div>
-                        <div class="slider-item">
-                            <h3>Gestión de Proyectos</h3>
-                            <p>Gestiona tus proyectos de manera eficiente con nuestras soluciones de planificación y ejecución detallada.</p>
-                        </div>
-                        <div class="slider-item">
-                            <h3>Planificación Estratégica</h3>
-                            <p>Desarrolla y ejecuta estrategias efectivas para el crecimiento a largo plazo de tu empresa.</p>
-                        </div>
-                        <div class="slider-item">
-                            <h3>Desarrollo Organizacional</h3>
-                            <p>Optimiza la estructura y el funcionamiento de tu organización para mejorar la eficiencia y el desempeño.</p>
-                        </div>
-                    </div>
-                    <button class="prev">‹</button>
-                    <button class="next">›</button>
+                <div class="section-title">
+                    <h2>Conoce a Nuestro Equipo</h2>
+                    <p>Descubre quiénes están detrás de Brefh Asesores y conoce más sobre nuestro equipo profesional.</p>
                 </div>
         
-                <!-- Tarjetas de Servicios -->
-                <div class="service-cards">
-                    <div class="service-card">
-                        <div class="icon-container">
-                            <i class="ri-bar-chart-line"></i>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="pic">
+                            <img src="" alt="Walter White">
                         </div>
-                        <h3>Consultoría Financiera</h3>
-                        <p>Obtén asesoramiento experto para maximizar tus recursos y tomar decisiones informadas para tu negocio.</p>
-                        <a href="#" class="btn">Más Información</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon-container">
-                            <i class="ri-briefcase-4-line"></i>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                            <div class="social">
+                                <a href="#"><i class="ri-twitter-fill"></i></a>
+                                <a href="#"><i class="ri-facebook-fill"></i></a>
+                                <a href="#"><i class="ri-instagram-fill"></i></a>
+                                <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                            </div>
                         </div>
-                        <h3>Gestión de Proyectos</h3>
-                        <p>Gestiona tus proyectos de manera eficiente con nuestras soluciones de planificación y ejecución detallada.</p>
-                        <a href="#" class="btn">Más Información</a>
                     </div>
-                    <div class="service-card">
-                        <div class="icon-container">
-                            <i class="ri-calendar-todo-line"></i>
+                    <div class="team-member">
+                        <div class="pic">
+                            <img src="assets/img/team/team-2.jpg" alt="Sarah Jhonson">
                         </div>
-                        <h3>Planificación Estratégica</h3>
-                        <p>Desarrolla y ejecuta estrategias efectivas para el crecimiento a largo plazo de tu empresa.</p>
-                        <a href="#" class="btn">Más Información</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon-container">
-                            <i class="ri-group-line"></i>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                            <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                            <div class="social">
+                                <a href="#"><i class="ri-twitter-fill"></i></a>
+                                <a href="#"><i class="ri-facebook-fill"></i></a>
+                                <a href="#"><i class="ri-instagram-fill"></i></a>
+                                <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                            </div>
                         </div>
-                        <h3>Desarrollo Organizacional</h3>
-                        <p>Optimiza la estructura y el funcionamiento de tu organización para mejorar la eficiencia y el desempeño.</p>
-                        <a href="#" class="btn">Más Información</a>
                     </div>
-                </div>
-        
-                <!-- Llamada a la Acción Principal -->
-                <div class="cta">
-                    <h3>¿Listo para transformar tu negocio?</h3>
-                    <p>Contáctanos hoy para una consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos.</p>
-                    <a href="#" class="cta-btn">Solicitar Consulta</a>
-                </div>
-        
-                <!-- Testimonios -->
-                <div class="testimonials">
-                    <h3>Lo que dicen nuestros clientes</h3>
-                    <div class="testimonial">
-                        <p>"La consultoría financiera que recibimos ha sido fundamental para el éxito de nuestro proyecto. ¡Altamente recomendados!"</p>
-                        <span>- Juan Pérez, CEO de Empresa X</span>
+                    <div class="team-member">
+                        <div class="pic">
+                            <img src="assets/img/team/team-3.jpg" alt="William Anderson">
+                        </div>
+                        <div class="member-info">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                            <div class="social">
+                                <a href="#"><i class="ri-twitter-fill"></i></a>
+                                <a href="#"><i class="ri-facebook-fill"></i></a>
+                                <a href="#"><i class="ri-instagram-fill"></i></a>
+                                <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <p>"Un equipo profesional y eficiente en la gestión de proyectos. Gracias a ellos, logramos completar nuestro proyecto a tiempo y dentro del presupuesto."</p>
-                        <span>- Ana Gómez, Directora de Proyecto</span>
+                    <div class="team-member">
+                        <div class="pic">
+                            <img src="assets/img/team/team-4.jpg" alt="Amanda Jepson">
+                        </div>
+                        <div class="member-info">
+                            <h4>Amanda Jepson</h4>
+                            <span>Accountant</span>
+                            <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                            <div class="social">
+                                <a href="#"><i class="ri-twitter-fill"></i></a>
+                                <a href="#"><i class="ri-facebook-fill"></i></a>
+                                <a href="#"><i class="ri-instagram-fill"></i></a>
+                                <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Agrega más miembros según sea necesario -->
                 </div>
             </div>
         </section>
 
 
-
-
-
-
-        <!-- --SECTION FIVE-- -->
-        <section class="blog">
+        <!-- --SECTION FIVE -->
+        <section class="section-five">
             <div class="container">
-                <h2 class="animate-header">Nuestro Blog</h2>
-                <p class="intro">Descubre artículos inspiradores, consejos prácticos y las últimas noticias de nuestra industria. Mantente informado y actualizado con nuestro contenido.</p>
-                
-                <!-- Artículos del Blog -->
-                <div class="blog-grid">
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="path-to-your-image.jpg" alt="Artículo 1">
-                        </div>
-                        <div class="blog-content">
-                            <h3>Título del Artículo 1</h3>
-                            <p>Una breve descripción del artículo que llama la atención y anima a los usuarios a leer más.</p>
-                            <a href="#" class="read-more">Leer Más</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="path-to-your-image.jpg" alt="Artículo 2">
-                        </div>
-                        <div class="blog-content">
-                            <h3>Título del Artículo 2</h3>
-                            <p>Una breve descripción del artículo que llama la atención y anima a los usuarios a leer más.</p>
-                            <a href="#" class="read-more">Leer Más</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="path-to-your-image.jpg" alt="Artículo 3">
-                        </div>
-                        <div class="blog-content">
-                            <h3>Título del Artículo 3</h3>
-                            <p>Una breve descripción del artículo que llama la atención y anima a los usuarios a leer más.</p>
-                            <a href="#" class="read-more">Leer Más</a>
-                        </div>
-                    </article>
-                    <article class="blog-post">
-                        <div class="blog-image">
-                            <img src="path-to-your-image.jpg" alt="Artículo 4">
-                        </div>
-                        <div class="blog-content">
-                            <h3>Título del Artículo 4</h3>
-                            <p>Una breve descripción del artículo que llama la atención y anima a los usuarios a leer más.</p>
-                            <a href="#" class="read-more">Leer Más</a>
-                        </div>
-                    </article>
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                    <p>Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.</p>
                 </div>
-                
-                <!-- Llamada a la Acción para Suscripción -->
-                <div class="cta-subscribe">
-                    <h3>¡Suscríbete a Nuestro Boletín!</h3>
-                    <p>Recibe las últimas noticias y actualizaciones directamente en tu bandeja de entrada.</p>
-                    <form action="#" method="post">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit">Suscribirse</button>
-                    </form>
+        
+                <div class="contact-content">
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <ul>
+                            <li><i class="ri-map-pin-fill"></i> Dirección: Calle Ejemplo 123, Ciudad, País</li>
+                            <li><i class="ri-phone-fill"></i> Teléfono: +123 456 7890</li>
+                            <li><i class="ri-mail-fill"></i> Correo Electrónico: contacto@brefhasesores.com</li>
+                        </ul>
+                        <!-- Mapa de ubicación dentro de la tarjeta de información de contacto -->
+                        <div class="contact-map">
+                            <h3>Ubicación</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.452795800262!2d-122.41941568468109!3d37.7749295797597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581c23d9e3abf%3A0x8d2a9821c2334fd!2sSan%20Francisco%2C%20CA%2094120!5e0!3m2!1ses!2sus!4v1675488727613!5m2!1ses!2sus" 
+                                width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+        
+                    <!-- Formulario de contacto -->
+                    <div class="contact-form">
+                        <h3>Envíanos un mensaje</h3>
+                        <form action="https://formsubmit.co/perez.galicia.adrian589@gmail.com" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
-
-
-        <!-- --SECTION SIX-- -->
-        
-        
-        
-
-
-
-
-
     </main>
 
-    <script src="main.js"></script>
+
+
+
+    <!-- --FOOTER-- -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo de la Empresa -->
+                <div class="footer-logo">
+                    <img src="images/BREHF BLANCO B.png" alt="Brefh Asesores Logo">
+                </div>
+    
+                <!-- Información de Contacto -->
+                <div class="footer-info">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="ri-map-pin-fill"></i> Paseo de las palmas 320
+                            Miguel Hidalgo, CDMX 11000
+                            México</li>
+                        <li><i class="ri-phone-fill"></i> +52 5589 55488 55</li>
+                        <li><i class="ri-mail-fill"></i> comunicacion@breasesores.com</li>
+                    </ul>
+                </div>
+    
+                <!-- Redes Sociales -->
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-fill"></i></a>
+                        <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Secciones del Sitio -->
+                <div class="footer-links">
+                    <h4>Secciones</h4>
+                    <ul>
+                        <li><a href="#section1">Inicio</a></li>
+                        <li><a href="#section2">Servicios</a></li>
+                        <li><a href="#section3">Casos de Éxito</a></li>
+                        <li><a href="#section4">Nuestro Equipo</a></li>
+                        <li><a href="#section5">Contacto</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Atención al Cliente -->
+                <div class="footer-support">
+                    <h4>Atención al Cliente</h4>
+                    <ul>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Brefh Asesores. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+    <script src="main.js" async></script>
+
 </body>
 </html>
