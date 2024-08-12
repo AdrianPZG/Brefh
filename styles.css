@@ -32,13 +32,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f4f3f8; /* Cambié el fondo a blanco */
+    background-color: #f4f3f8; 
     padding: 1rem;
     color: var(--text-color);
-    position: relative;
-    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.1);  /* Añadí un borde inferior */
-    font-family: Poppins, sans-serif;
+    position: fixed;  /* Fija la barra en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 6px 7px rgba(0, 0, 0, 0.1);  
+    font-family: Montserrat, sans-serif;
+    transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
+
 
 .brand-title {
     display: flex;
@@ -61,6 +66,7 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
+    gap: 0.5rem; /* Aumenta la separación entre los enlaces */
     padding-right: 7rem;
 }
 
@@ -69,41 +75,50 @@ body {
 }
 
 .navbar-links a {
-    color: var(--nav-background);
+    color: #333333; /* Color negro para todos los enlaces */
     font-size: 1.1em;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative; /* Para el efecto del rectángulo gris */
+    position: relative;
+    font-weight: 600; /* Similar a negritas */
+    padding: 0.7rem 1rem; /* Añade espacio adicional alrededor del texto */
+    display: inline-block; /* Asegura que el padding y el background se apliquen correctamente */
 }
 
-.navbar-links a:hover {
-    color: var(--nav-background); /* Mantuve el color de la letra */
-}
 
-.navbar-links a::before {
+.navbar-links a:not(.contact-button)::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(128, 128, 128, 0.3); /* Rectángulo gris medio transparente */
+    height: 120%; /* Aumenta la altura para hacer el rectángulo más grande */
+    background-color: rgba(0, 60, 255, 0.158); /* Rectángulo gris medio transparente */
     transition: opacity 0.3s ease;
     opacity: 0;
     z-index: -1;
+    transform: translateY(-50%); /* Centra el rectángulo verticalmente */
 }
 
 .navbar-links a:hover::before {
-    opacity: 10; /* Efecto de hover en el rectángulo gris */
+    opacity: 1; /* Efecto de hover en el rectángulo gris */
 }
 
-.contact-button {
-    background-color: var(--background-color); /* Botón azul para "Contacto" */
-    color: var(--nav-background);
+.navbar-links .contact-button {
+    color: #ffffff; /* Color blanco para el botón de contacto */
+    background-color: var(--background-color); /* Mantiene el fondo azul */
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: background-color 0.3s ease;
+    font-weight: 450;
 }
+
+/* .contact-button {
+    color: #ffffff; 
+    background-color: var(--background-color); 
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+} */
 
 
 .toggle-button {
@@ -135,42 +150,84 @@ body {
 
 /* Ajustes para dispositivos móviles */
 @media (max-width: 768px) {
-    .toggle-button {
+    .navbar {
         display: flex;
-        margin-right: .5em; /* Asegura que el botón esté en su posición original */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem; /* Ajusta el padding si es necesario */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f4f3f8; /* Mantén el fondo para la versión móvil */
+        box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho */
+        z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
     }
 
-    
+    /* Ajusta la posición del logo */
+    .logo {
+        height: 50px; /* Ajusta la altura si es necesario */
+        margin: 0 auto; /* Centra la imagen si es necesario */
+    }
 
+    /* Ajusta el toggle-button */
+    .toggle-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px; /* Ajusta la altura del botón */
+        cursor: pointer;
+        margin-right: 1rem; /* Espacio desde el borde derecho */
+    }
+
+    /* Ajusta la posición del menú desplegable */
     .navbar-links {
         position: fixed;
         top: 0;
-        right: -100%;
-        background-color: hsla(0, 0%, 10%, .3);
-        width: 60%;
-        height: 100%;
-        padding: 4.5rem 0 0 3rem;
+        right: -100%; /* Inicialmente oculto fuera de la pantalla */
+        background-color: hsla(0, 0%, 100%, 0.315); /* Fondo semi-transparente */
+        width: 60%; /* Ocupa todo el ancho en dispositivos móviles */
+        height: 500%;
+        padding: 5rem 1rem 0 2rem; /* Ajusta el padding para que el contenido no se vea cortado */
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        transition: right .7s;
+        transition: right 0.7s;
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+        overflow: auto; /* Permite desplazarse si el contenido es más largo */
     }
 
+    /* Muestra el menú al activar la clase "active" */
     .navbar-links.active {
         right: 0;
     }
 
+    /* Ajustes de los enlaces en el menú desplegable */
     .navbar-links ul {
-        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column; /* Disposición vertical en móvil */
     }
 
     .navbar-links li {
-        padding: 0.5rem 0;
+        padding: 0.5rem 0; /* Ajusta el padding entre los elementos del menú */
     }
 
+    /* Muestra el botón de cierre en dispositivos móviles */
     .close-button {
         display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: var(--nav-background);
+        cursor: pointer;
     }
 }
+
 
 
 
@@ -189,6 +246,14 @@ body {
 /*MAIN*/
 
 /*SECTION1*/
+
+
+
+
+
+
+
+
 .section-one {
     display: flex;
     flex-direction: column;
@@ -196,7 +261,7 @@ body {
     padding: 3rem;
     text-align: center;
     color: #000;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
     background-color: #f7f6fa;
 }
 
@@ -208,34 +273,35 @@ body {
     }
 
     .section-one .content {
-        padding-left: 2rem; /* Ajuste a la izquierda en pantallas grandes */
-        flex: 1; /* Permitir que el contenido ocupe parte del espacio */
+        padding-left: 1rem; /* Ajuste a la izquierda en pantallas grandes */
+        flex: 1.5; /* Permitir que el contenido ocupe más espacio */
         text-align: left; /* Alinear el texto a la izquierda en pantallas grandes */
     }
 
     .section-one .image {
+        flex: 1; /* Reducir el tamaño del contenedor de la imagen */
         margin-top: 0;
-        flex: 2; /* Aumentar el tamaño del contenedor de la imagen */
+        width: 100%;
     }
 }
 
 .section-one h1 {
-    font-size: 4rem; /* Tamaño grande en pantallas grandes */
+    font-size: 3.5rem; /* Tamaño grande en pantallas grandes */
     margin-bottom: 2rem;
     line-height: 1.2; /* Ajustar la altura de línea para el texto en varias líneas */
-    max-width: 600px; /* Controlar el ancho máximo del h1 */
-    margin-top: .5em;
+    max-width: 90%; /* Ajustar el ancho máximo del h1 para que ocupe más espacio */
+    margin-top: 1.5em;
 }
 
 .section-one h1 span {
-    color: var(--background-color); /* Color azul */
+    color: var(--hover-color); /* Color azul */
     /* background: linear-gradient(500deg, #138A98, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-animation 3s ease infinite; */
 }
 
-@keyframes gradient-animation {
+/* @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
     }
@@ -245,21 +311,21 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
+} */
 
 .section-one p {
-    font-size: 19px; /* Tamaño grande en pantallas grandes */
-    margin-bottom: 4rem;
-    line-height: 1.7; /* Ajustar la altura de línea para el párrafo en varias líneas */
-    max-width: 700px; /* Controlar el ancho máximo del párrafo */
+    font-size: 1.2rem; /* Reducir el tamaño del párrafo */
+    margin-bottom: 3rem; /* Reducir el margen inferior */
+    line-height: 1.4; /* Ajustar la altura de línea para el párrafo en varias líneas */
+    max-width: 70%; /* Controlar el ancho máximo del párrafo */
     text-align: justify;
-    font-weight: 500;
+    font-weight: 600;
+    color: #52606d;
 }
 
 .section-one .buttons {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+    justify-content: left;
 }
 
 .section-one .btn {
@@ -268,31 +334,19 @@ body {
     border: 2px solid transparent;
     border-radius: 50px; /* Redondear los botones */
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.section-one .primary-btn {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
-.section-one .primary-btn:hover {
-    background-color: var(--button-color); /* Cambiar a otro color */
-    color: var(--gradient-end);
-    transform: scale(1.05); /* Animación de escalado */
+    /* transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; */
 }
 
 .section-one .secondary-btn {
-    background-color: var(--text-color);
-    color: var(--nav-background);
-    border-color: var(--button-color);
+    background-color: var(--hover-color);
+    color: var(--gradient-end);
 }
 
 .section-one .secondary-btn:hover {
-    background-color: var(--button-color); /* Cambiar a otro color */
+    background-color: var(--background-color); /* Cambiar a otro color */
     color: var(--text-color);
     border-color: var(--text-color);
-    transform: scale(1.05); /* Animación de escalado */
+    /*transform: scale(1.05); /* Animación de escalado */
 }
 
 @media (max-width: 768px) {
@@ -302,30 +356,23 @@ body {
         gap: 1rem; /* Ajuste del espacio entre botones */
     }
 
-    .section-one .primary-btn {
-        width: 79%; /* Menor largo */
-        margin-bottom: 0.5rem;
-    }
-
     .section-one .secondary-btn {
         width: 100%; /* Mayor largo */
     }
 }
 
-
-
 .section-one .image {
-    margin-top: 4rem;
+    margin-top: 6rem; /* Ajustar margen superior para pantallas pequeñas */
     flex: 1; /* Asegura que la imagen tenga espacio suficiente en pantallas pequeñas */
 }
 
 .section-one .responsive-image {
     width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: 100%; /* Mantiene la proporción de la imagen */
     display: block;
 }
 
-@keyframes zoom-in-out {
+/* @keyframes zoom-in-out {
     0% {
         transform: scale(1);
         opacity: 0.7;
@@ -338,32 +385,107 @@ body {
         transform: scale(1);
         opacity: 0.7;
     }
-}
+} */
 
-.section-one .responsive-image {
-    animation: zoom-in-out 5s ease-in-out infinite;
-}
-
-/* Ajustar tamaño del texto en pantallas pequeñas */
 @media (max-width: 767px) {
     .section-one h1 {
-        font-size: 2.8rem; /* Tamaño adecuado para pantallas pequeñas */
-        margin-top: 0;
-    }
-
-    .section-one{
+        font-size: 2.5rem; /* Tamaño adecuado para pantallas pequeñas */
+        margin-top: 2em;
+        max-width: 90%; /* Ajustar el ancho máximo del h1 para pantallas pequeñas */
         text-align: left;
     }
 
     .section-one p {
-        font-size: 1.2rem; /* Tamaño adecuado para pantallas pequeñas */
-        line-height: 1.9; /* Ajustar la altura de línea para el párrafo en varias líneas */
-        max-width: 400px; /* Controlar el ancho máximo del párrafo */
+        font-size: 1.1rem; /* Tamaño adecuado para pantallas pequeñas */
+        line-height: 1.8; /* Ajustar la altura de línea para el párrafo en varias líneas */
+        max-width: 90%; /* Ajustar el ancho máximo del párrafo */
         text-align: left;
-        font-weight: 500;
-        margin-bottom: 3em;
-        }
+        margin-bottom: 2em;
+    }
+
+    .section-one {
+        text-align: center;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SECTION 1.2*/
+.stats-section {
+    padding: 3rem;
+    background-color: var(--background-color-two);
+    text-align: center;
+    opacity: 0; /* Inicialmente oculto para la animación */
+    transform: translateY(50px); /* Mover hacia abajo inicialmente */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animación de entrada */
+    color: var(--hover-color);
+}
+
+.stats-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    flex: 1;
+    padding: 2rem;
+    border-right: 2px solid #ddd;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-size: 3rem; /* Aumentar tamaño de número */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        border: none;
+        max-width: 90%;
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+}
+
+
+
 
 
 
