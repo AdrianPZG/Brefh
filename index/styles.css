@@ -500,12 +500,21 @@ body {
 
 
 
+
+
 /*SECTION-TWO*/
 .section-two {
     padding: 3rem 7rem;
     text-align: center;
     background-color: #eaf5f7; /* Color de fondo principal */
     position: relative;
+    opacity: 0;
+    transform: translateY(30px); /* Mueve la sección hacia abajo inicialmente */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Añade la transición */
+}
+.section-two.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-two h2 {
@@ -517,7 +526,7 @@ body {
 }
 
 .underline {
-    width: 120px; /* Ajusta el largo de la línea aquí */
+    width: 100px; /* Ajusta el largo de la línea aquí */
     height: 4px;
     background-color: var(--primary-color);
     margin: 0 auto 2rem auto;
@@ -525,53 +534,77 @@ body {
 
 .services-grid {
     display: grid;
-    gap: 4rem; /* Separación entre tarjetas */
+    gap: 3.5rem; /* Separación entre tarjetas */
     grid-template-columns: repeat(2, 1fr); /* Dos tarjetas por fila */
     justify-items: center; /* Centra las tarjetas horizontalmente dentro de su celda */
 }
 
 .service-card {
     background-color: var(--gradient-end);
-    padding: 1rem;
     border-radius: 12px; /* Borde circular de las tarjetas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho de su contenedor */
-    height: 220px; /* Altura fija para las tarjetas (ajústalo según necesidad) */
+    width: 75%; /* Asegura que las tarjetas ocupen todo el ancho de su contenedor */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--hover-color); /* Borde azul delgado */
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0; /* Elimina el padding interno de la tarjeta */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho total */
+    opacity: 0;
+    transform: translateY(20px); /* Mueve las tarjetas hacia abajo inicialmente */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Añade la transición */
 }
 
-.service-card i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card .service-image {
+    width: 100%;
+    height: 250px; /* Altura fija para la imagen (ajústala según necesidad) */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    border-radius: 12px 12px 0 0; /* Bordes redondeados en la parte superior */
+    margin: 0; /* Elimina márgenes de la imagen */
+}
+
+.service-card h3,
+.service-card p,
+.service-card .more-info {
+    margin-left: 1.5rem; /* Margen izquierdo */
+    margin-right: 4rem; /* Margen derecho */
 }
 
 .service-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin: 1.5rem 1rem 0.5rem 1.5rem; /* Margen a los lados */
     color: var(--nav-background);
+    max-width: 60%; /* Limita el ancho máximo del encabezado */
 }
 
 .service-card p {
     color: var(--nav-background);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-size: 0.9rem;
+    max-width: 90%; /* Limita el ancho máximo del párrafo */
 }
 
 .service-card .more-info {
-    color: var(--primary-color);
+    display: inline-block;
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    padding: 0.5rem 1rem;
+    background-color: var(--background-color);
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 3rem; /* Espacio en la parte inferior */
 }
 
 .service-card .more-info:hover {
-    color: var(--hover-color);
+    background-color: var(--hover-color);
 }
 
 .service-card:hover {
@@ -584,21 +617,18 @@ body {
     margin-top: 6rem;
     margin-bottom: 2rem;
     padding: 1.5rem 3rem;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
     color: #fff;
     text-decoration: none;
     font-weight: 400;
     border-radius: 100px; /* Borde redondeado */
     transition: background-color 0.4s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    
 }
 
 .cta-button:hover {
-    background-color: var(--button-color);
+    background-color: var(--hover-color);
     transform: scale(1.05);
-    
 }
 
 /* Responsive Design */
@@ -622,15 +652,25 @@ body {
     }
 
     .service-card {
-        padding: 1rem;
-        height: auto; /* Ajuste automático de altura en móviles */
         width: 80%;
+        padding: 0; /* Elimina padding en móviles */
     }
 
-    .cta-button {
-        padding: 1.5rem 3rem;
+    .service-card .service-image {
+        height: auto; /* Ajusta la altura automáticamente en móviles */
+        margin: 0; /* Elimina márgenes de la imagen */
+    }
+
+    .service-card h3,
+    .service-card p,
+    .service-card .more-info {
+        margin-left: 1.3rem; /* Margen izquierdo en móviles */
+        margin-right: 2.3rem; /* Margen derecho en móviles */
     }
 }
+
+
+
 
 
 
@@ -1029,7 +1069,7 @@ body {
 .footer-line {
     border: 0;
     height: 2px;
-    background-color: #2cdd9b; /* Color verde agua */
+    background-color: var(--hover-color); /* Color verde agua */
     margin: 0 2rem 1.5rem 2rem; /* Alineación a la izquierda */
 }
 
@@ -1049,7 +1089,7 @@ body {
 
 .footer-info ul li i {
     margin-right: 0.5rem;
-    color: #2cdd9b; /* Iconos en verde agua */
+    color: var(--hover-color); /* Iconos en verde agua */
 }
 
 .footer-social {
@@ -1065,7 +1105,7 @@ body {
 }
 
 .footer-social a:hover {
-    color: #2cdd9b; /* Cambia a verde agua al pasar el cursor */
+    color: var(--hover-color); /* Cambia a verde agua al pasar el cursor */
 }
 
 .footer-legal {
